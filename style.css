@@ -1,0 +1,311 @@
+*{box-sizing: border-box;}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+/* LUDO HOME PAGE */
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(200deg, blue 10%, dodgerblue 80%);
+  display: flex;
+  flex-wrap: wrap;
+}
+.container_home{
+  width: 50%;
+  position: relative;
+}
+.container_home .ludo_home{
+  max-width: 400px;
+  position: absolute;
+  top: 15%;
+  left: 18%;
+  box-shadow: 0 0 5px 5px #333;
+  transform: rotate(10deg);
+  transition: 0.8s;
+}
+.container_home .ludo_home:hover{
+  transform: rotate(0deg);
+}
+.container_home .ludo_home img{
+  width: 100%;
+  height: 100%;
+}
+.container .container_player{
+  width: 50%;
+  text-align: center;
+}
+.container .container_player h1{
+  font-size: 75px;
+  color: #008000;
+  text-decoration: underline white;
+  font-family: 'Dancing Script', cursive;
+}
+.container .container_player .Player{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px 0 0 15px;
+}
+.container .container_player .Player{
+  box-shadow: 0 0 10px black;
+}
+.container .container_player .Player a{
+  width: 60px;
+  height: 60px;
+  display: block;
+  font-size: 45px;
+  padding: 2px;
+  margin: 10px;
+  background-color: white;
+  text-decoration: none;
+  border: 2px solid gray;
+  border-radius: 50%;
+}
+.container .container_player .Player a:hover,
+.container .container_player .Player .active{box-shadow: 0 0 3px 3px black;}
+
+.container .container_player .Player .a1{color: gold;border-color: gold;}
+.container .container_player .Player .a1.active{color: white;background-color: gold;}
+.container .container_player .Player .a2{color: red;border-color: red;}
+.container .container_player .Player .a2.active{color: white;background-color: red;}
+.container .container_player .Player .a3{color: blue;border-color: blue;}
+.container .container_player .Player .a3.active{color: white;background-color: blue;}
+.container .container_player .Player .a4{color: green;border-color: green;}
+.container .container_player .Player .a4.active{color: white;background-color: green;}
+#enter{
+  display: inline-block;
+  font-size: 35px;
+  padding: 3px 35px;
+  margin-top: 60px;
+  border: 2px solid white;
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 4px black;
+  transition: 0.2s;
+}
+#enter:hover{
+  box-shadow: 0 0 5px black;
+}
+
+/* LUDO PLAY PAGE */
+.container .play-card{
+  position: relative;
+  width: 680px;
+  height: 625px;
+  margin: 9px auto;
+}
+.container .play-card .dice,
+.container .play-card .card .block{
+  position: absolute;
+  display: inline-block;
+  width: 70px;
+  height: 58px;
+  z-index: 1;
+  padding-left: 10px;
+  padding-top: 5px;
+  border: 2px solid #333;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+}
+.container .play-card .dice img{
+  width: 80%;
+  border-radius: 8px;
+  background-image: white;
+}
+.container .play-card .dice1,
+.container .play-card .card .block1{
+  top:0;
+  left: 0;
+}
+.container .play-card .dice1:hover,
+.container .play-card .dice2:hover,
+.container .play-card .dice3:hover,
+.container .play-card .dice4:hover{
+  background-color: #454545;
+}
+.container .play-card .dice2,
+.container .play-card .card .block2{
+  top:0;
+  right: 0;
+}
+.container .play-card .dice3,
+.container .play-card .card .block3{
+  bottom:0;
+  right: 0;
+}
+.container .play-card .dice4,
+.container .play-card .card .block4{
+  bottom:0;
+  left: 0;
+}
+.container .play-card .card{
+  width: 100%;
+  height: 81.5%;
+  background-color: white;
+  position: absolute;
+  top: 58px;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0 0 5px black;
+  border: 1px solid black;
+}
+.container .play-card .card .block{
+  width: 250px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  padding: 0;
+}
+.container .play-card .card .block1,
+.container .play-card .card .block .inner-block .p1{
+  background-color: #FF0000;
+}
+.container .play-card .card .block2,
+.container .play-card .card .block .inner-block .p2{
+  background-color: #00A300;
+}
+.container .play-card .card .block3,
+.container .play-card .card .block .inner-block .p3{
+  background-color: yellow;
+}
+.container .play-card .card .block4,
+.container .play-card .card .block .inner-block .p4{
+  background-color: #1F51FF;
+}
+.container .play-card .card .block .inner-block{
+  width: 75%;
+  height: 72%;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .play-card .card .block .inner-block .bullets-place{
+  border-radius: 50%;
+  border: 1px solid black;
+  flex-basis: 23%;
+  margin: 15px;
+  margin-left: 27px;
+}
+.container .play-card .card .triangle{
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.container .play-card .card .right-triangle{
+  top: 37.2%;
+  left: 36.8%;
+  border-top: 65px solid transparent;
+  border-left: 92px solid #FF0000;
+  border-bottom: 65px solid transparent;
+}
+.container .play-card .card .left-triangle{
+  top: 37.2%;
+  left: 49.6%;
+  border-top: 65px solid transparent;
+  border-right: 92px solid yellow;
+  border-bottom: 65px solid transparent;
+}
+.container .play-card .card .top-triangle{
+  top: 37.1%;
+  left: 36.2%;
+  border-left: 93px solid transparent;
+  border-top: 66px solid #00A300;
+  border-right: 93px solid transparent;
+}
+.container .play-card .card .bottom-triangle{
+  top: 50%;
+  left: 36.2%;
+  border-left: 93px solid transparent;
+  border-bottom: 66px solid #1F51FF;
+  border-right: 93px solid transparent;
+}
+.container .play-card .card .row,
+.container .play-card .card .column{
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+.container .play-card .card .row .square,
+.container .play-card .card .column .square{
+  width: 41px;
+  height: 41px;
+  background-color: white;
+  border-right: 2px solid black;
+  text-align: center;
+}
+.container .play-card .card .row .square:last-child{
+  border-right: none;
+}
+/* LEFT SIDED ROWS */
+.container .play-card .card .row1{top: 190px;left: 0;}
+.container .play-card .card .row2{top: 233px;left: 0;}
+.container .play-card .card .row2 .square:not(:first-child),#red{background-color: red;}
+.container .play-card .card .row3{top: 276px;left: 0;}
+
+/* RIGHT SIDED ROWS */
+.container .play-card .card .row4{top: 190px;right: 0;}
+.container .play-card .card .row5{top: 233px;right: 0;}
+.container .play-card .card .row5 .square:not(:last-child),#yellow{background-color: yellow;}
+.container .play-card .card .row6{top: 276px;right: 0;}
+
+/* TOP COLUMNS */
+.container .play-card .card .column{
+  flex-direction: column;
+  border-left: none;
+  border-top: 2px solid black;
+}
+.container .play-card .card .column .square{
+  width: 58px;
+  height: 31px;
+  border-right: none;
+  border-bottom: 2px solid black;
+}
+.container .play-card .card .column .square:last-child{
+  border-bottom: none;
+}
+.container .play-card .card .column1{top: 0;left: 250px;}
+.container .play-card .card .column2{top: 0;left: 310px;}
+.container .play-card .card .column2 .square:not(:first-child),#green{background-color: #00A300;}
+.container .play-card .card .column3{top: 0;left: 370px;}
+
+/* BOTTOM COLUMNS */
+.container .play-card .card .column4{bottom: 0;left: 250px;}
+.container .play-card .card .column5{bottom: 0;left: 310px;}
+.container .play-card .card .column5 .square:not(:last-child),#blue{background-color: #1F51FF;}
+.container .play-card .card .column6{bottom: 0;left: 370px;}
+.container .play-card .card .row .square{
+  font-size: 22px;
+  padding: 6px;
+  font-weight: bold;
+}
+#arrow-right{color: red;}
+#arrow-left{color: orange;}
+.container .play-card .card .column .square{
+  font-size: 21px;
+  font-weight: bold;
+}
+#arrow-bottom{color: green;}
+#arrow-top{color: blue;}
+#star1{
+  font-size: 28px;
+  padding: 0 0 10px 0;
+}
+#star2{
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
